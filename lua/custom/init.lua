@@ -42,3 +42,4 @@ map('i', '<C-Z>', '<C-O>u', opts)
 map('n', '<C-Y>', '<C-R>', opts)
 -- Set Ctrl+Y to redo in insert mode
 map('i', '<C-Y>', '<C-O>:redo<CR>', opts)
+map('n', '<Leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
