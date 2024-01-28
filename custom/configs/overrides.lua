@@ -4,12 +4,10 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "html",
-    "css",
-    "javascript",
-    "typescript",
     "tsx",
     "c",
+    "cpp",
+    "cuda",
     "markdown",
     "markdown_inline",
   },
@@ -33,10 +31,11 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
-
+    "pyright",
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "autopep8"
   },
 }
 
@@ -44,6 +43,7 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
 
   renderer = {

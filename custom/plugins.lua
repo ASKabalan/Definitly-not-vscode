@@ -16,7 +16,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+     opts = overrides.mason
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -44,6 +44,7 @@ local plugins = {
     config = function()
       require "custom.configs.conform"
     end,
+    lazy = false,
   },
   {
     "mg979/vim-visual-multi",
@@ -57,6 +58,17 @@ local plugins = {
   {
     "sindrets/diffview.nvim" ,
     lazy = false
+  },
+  {
+    'simrat39/symbols-outline.nvim',
+    lazy = false,
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  },
+  {
+    'tell-k/vim-autopep8',
+    lazy = false,
   },
   
   -- To make a plugin not be loaded

@@ -7,9 +7,14 @@ local options = {
 		javascript = { "prettier" },
 		css = { "prettier" },
 		html = { "prettier" },
-
 		sh = { "shfmt" },
+
+		python = { "autopep8" },  -- or "yapf"
+        c = { "clang-format" },
+        cpp = { "clang-format" },
+        cuda = { "clang-format" }, 
 	},
+
 
   -- adding same formatter for multiple filetypes can look too much work for some
   -- instead of the above code you could just use a loop! the config is just a table after all!
@@ -20,5 +25,6 @@ local options = {
 	--   lsp_fallback = true,
 	-- },
 }
+
 
 require("conform").setup(options)
