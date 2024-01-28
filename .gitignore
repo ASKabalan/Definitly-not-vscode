@@ -1,7 +1,7 @@
-plugin
-custom
+#plugin
+#custom
 spell
-ftplugin
+#ftplugin
 syntax
 coc-settings.json
 .luarc.json
