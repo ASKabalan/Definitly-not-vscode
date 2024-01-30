@@ -47,11 +47,9 @@ local plugins = {
   },
   {
     "github/copilot.vim",
-    lazy = false
   },
   {
     "sindrets/diffview.nvim",
-    lazy = false
   },
   {
     'stevearc/aerial.nvim',
@@ -68,6 +66,20 @@ local plugins = {
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup ()
+      require('telescope').load_extension("projects")
+    end,
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    config = function()
+      require("scrollbar").setup()
+    end,
+    lazy = false,
   },
   {
     "nvim-pack/nvim-spectre",

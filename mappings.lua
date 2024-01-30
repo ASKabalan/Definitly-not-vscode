@@ -17,7 +17,7 @@ function TOGGLE_MOUSE()
       vim.o.mouse = 'a'
       -- Enable line numbers
       vim.wo.number = true
-      vim.wo.relativenumber = true
+      vim.wo.relativenumber = false
       -- Close NvimTree if it's open
       vim.cmd('NvimTreeOpen')
 
@@ -61,6 +61,16 @@ function TOGGLE_GIT_SYMBOLES()
   end
 end
 
+function OpenSpectreWithQuickfix()
+  -- Open Spectre
+  require('spectre').open_file_search({select_word=true})
+
+  -- Open a horizontal split for the quickfix window
+  -- Adjust '10' to change the height of the quickfix window
+  -- Use 'vsplit' instead of 'split' for a vertical split
+  vim.cmd('hor copen')
+end
+
 
 M.general = {
   n = {
@@ -99,7 +109,7 @@ M.general = {
 
     -- spectre
     ["<C-S-h>"] = { "<cmd>lua require('spectre').toggle()<CR>", "Toggle Spectre" },
-    ["<C-h>"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", "Search on current file" },
+    ["<C-h>"] = { "<cmd>lua OpenSpectreWithQuickfix()<CR>", "Search on current file" },
 
     -- Set a breakpoint with F9
     ["<S-F5>"] = { "<cmd>lua require('dap').reverse_continue()<CR>", "Reverse !!" },
@@ -148,7 +158,7 @@ M.general = {
     ["<C-Z>"] = { "<C-O>u", "Undo",opts },
     ["<C-Y>"] = { "<C-O>:redo<CR>", "Redo" ,opts},
 
-    ["<BS>"] = { '"d', "Backspace delete" ,opts},
+    ["<BS>"] = { 'x', "Backspace delete" ,opts},
 
         -- testing
 
@@ -248,6 +258,7 @@ M.telescope = {
   n = {
     -- find
 
+    ["<leader>p"] = { "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", "Find all",opts },
     ["<C-p>"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all",opts },
     ["<C-A-f>"] = { "<cmd> Telescope live_grep <CR>", "Live grep" ,opts},
     ["<C-f>"] = { "<cmd> Telescope buffers <CR>", "Find buffers" ,opts},

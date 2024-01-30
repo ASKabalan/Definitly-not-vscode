@@ -30,7 +30,7 @@ M.mason = {
     "clang-format",
     "autopep8",
     "debugpy",
-    "codelldb",
+    "marksman",
     "cmakelint",
     "cpplint",
 
@@ -66,6 +66,12 @@ M.nvterm = {
 
 -- git support in nvimtree
 M.nvimtree = {
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
   git = {
     enable = true,
     ignore = false,
