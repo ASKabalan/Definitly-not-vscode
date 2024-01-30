@@ -16,7 +16,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-     opts = overrides.mason
+    opts = overrides.mason
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -27,7 +27,10 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
+  {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+  },
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -38,15 +41,6 @@ local plugins = {
   },
 
   {
-    "stevearc/conform.nvim",
-    --  for users those who want auto-save conform + lazyloading!
-    -- event = "BufWritePre"
-    config = function()
-      require "custom.configs.conform"
-    end,
-    lazy = false,
-  },
-  {
     "mg979/vim-visual-multi",
     branch = "master",
     lazy = false
@@ -56,21 +50,51 @@ local plugins = {
     lazy = false
   },
   {
-    "sindrets/diffview.nvim" ,
+    "sindrets/diffview.nvim",
     lazy = false
   },
   {
-    'simrat39/symbols-outline.nvim',
-    lazy = false,
+    'stevearc/aerial.nvim',
     config = function()
-      require("symbols-outline").setup()
+      require "custom.configs.aerial"
     end,
   },
   {
-    'tell-k/vim-autopep8',
-    lazy = false,
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true
   },
-  
+  {
+    "nvim-pack/nvim-spectre",
+    branch = "master",
+  },
+  {
+    "folke/neodev.nvim",
+    config = function()
+      require "custom.configs.neodev"
+    end,
+    branch = "main",
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require "custom.configs.dap"
+    end,
+    branch = "master",
+  },
+  { 
+    "rcarriga/nvim-dap-ui",
+    config = function()
+      require "custom.configs.dapui"
+    end,
+    requires = {"mfussenegger/nvim-dap"}
+  }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

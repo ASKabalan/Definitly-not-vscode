@@ -4,7 +4,7 @@ M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
-    "tsx",
+    "python",
     "c",
     "cpp",
     "cuda",
@@ -24,18 +24,43 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettier",
-    "pyright",
+    "python-lsp-server",
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    "autopep8"
+    "autopep8",
+    "debugpy",
+    "codelldb",
+    "cmakelint",
+    "cpplint",
+
+  },
+}
+
+M.nvterm = {
+  terminals = {
+    shell = vim.o.shell,
+    list = {},
+    type_opts = {
+      float = {
+        relative = 'editor',
+        row = 0.3,
+        col = 0.25,
+        width = 0.5,
+        height = 0.4,
+        border = "single",
+      },
+      horizontal = { location = "rightbelow", split_ratio = .15, },
+      vertical = { location = "rightbelow", split_ratio = .5 },
+    }
+  },
+  behavior = {
+    autoclose_on_quit = {
+      enabled = false,
+      confirm = true,
+    },
+    close_on_exit = true,
+    auto_insert = true,
   },
 }
 
