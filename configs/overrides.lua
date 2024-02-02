@@ -33,6 +33,7 @@ M.mason = {
     "marksman",
     "cmakelint",
     "cpplint",
+    "cmake-language-server",
 
   },
 }

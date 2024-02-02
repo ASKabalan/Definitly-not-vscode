@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- Servers with default configuration
-local servers = { "html", "cssls", "tsserver","marksman"}
+local servers = { "html", "cssls", "tsserver","marksman","cmake"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
