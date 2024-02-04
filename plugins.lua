@@ -47,6 +47,7 @@ local plugins = {
   },
   {
     "github/copilot.vim",
+    lazy = false,
   },
   {
     "sindrets/diffview.nvim",
@@ -70,7 +71,7 @@ local plugins = {
   {
     "ahmedkhalf/project.nvim",
     config = function()
-      require("project_nvim").setup ()
+      require("project_nvim").setup()
       require('telescope').load_extension("projects")
     end,
   },
@@ -99,12 +100,12 @@ local plugins = {
     end,
     branch = "master",
   },
-  { 
+  {
     "rcarriga/nvim-dap-ui",
     config = function()
       require "custom.configs.dapui"
     end,
-    requires = {"mfussenegger/nvim-dap"}
+    requires = { "mfussenegger/nvim-dap" }
   }
 
   -- To make a plugin not be loaded

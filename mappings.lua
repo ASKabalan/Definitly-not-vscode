@@ -119,7 +119,7 @@ M.general = {
 
     -- Normal mode mappings for clipboard management
     ["<C-v>"] = { '"+p', "Paste from clipboard", opts },
-    ["<C-q>"] = { "<cmd>ClangdSwitchSourceHeader<CR>", "Switch between source and header" , opts},
+    ["<C-q>"] = { "<cmd>ClangdSwitchSourceHeader<CR>", "Switch between source and header", opts },
 
     -- Delete last character without cutting in normal mode
     ["<BS>"] = { 'h""x', "Delete back character in normal mode", opts },
@@ -197,9 +197,9 @@ M.general = {
     -- Visual mode mappings for clipboard management
     ["<C-c>"] = { '"+y', "Copy to clipboard", opts },
     ["<C-x>"] = { '"+x', "Cut to clipboard", opts },
-    ["<C-v>"] = { '""x"+p', "Paste from clipboard and replace selection", opts },
-    ["<C-Z>"] = { "<C-O>u", "Undo",opts },
-    ["<C-Y>"] = { "<C-O>:redo<CR>", "Redo" ,opts},
+    ["<C-v>"] = { '""xh"+p', "Paste from clipboard and replace selection", opts },
+    ["<C-Z>"] = { "<C-O>u", "Undo", opts },
+    ["<C-Y>"] = { "<C-O>:redo<CR>", "Redo", opts },
     ["<A-a>"] = { "V", "Select current line in Normal mode", opts },
     ["<C-a>"] = { "ggVG", "Select all in visual mode", opts },
 
