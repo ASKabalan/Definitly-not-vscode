@@ -317,10 +317,9 @@ M.telescope = {
 
   n = {
     -- find
-
+    ["<C-p>"] = { ":Telescope file_browser path=%:p:h select_buffer=true<CR>", "Find all", opts },
     ["<leader>p"] = { "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", "Find all", opts },
-    ["<C-p>"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all", opts },
-    ["<C-A-f>"] = { "<cmd> Telescope live_grep <CR>", "Live grep", opts },
+    ["<C-A-f>"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep", opts },
     ["<A-p>"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles", opts },
     ["<C-f>"] = { ":lua Live_grep_current_buffers()<CR>", "Highlight selected word in Normal Mode", opts },
 
