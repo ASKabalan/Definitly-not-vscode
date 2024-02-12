@@ -147,7 +147,7 @@ M.general = {
 
     -- Normal mode mappings for search and replace
     ["<C-S-h>"] = { "<cmd>lua require('spectre').toggle()<CR>", "Toggle Spectre", opts },
-    ["<C-h>"] = { "<cmd>lua OpenSpectreWithQuickfix()<CR>", "Search on current file", opts },
+    ["<C-A-h>"] = { "<cmd>lua OpenSpectreWithQuickfix()<CR>", "Search on current file", opts },
 
     -- Normal mode mappings for debugging
     ["<S-F5>"] = { "<cmd>lua require('dap').reverse_continue()<CR>", "Reverse !!", opts },
@@ -221,7 +221,7 @@ M.general = {
 
     -- Spectre
 
-    ["<C-h>"] = { "<esc><cmd>lua require('spectre').open_visual()<CR>", "Search current word" },
+    ["<C-A-h>"] = { "<esc><cmd>lua require('spectre').open_visual()<CR>", "Search current word" },
   },
   t = {
     -- Terminal mode mappings for clipboard management
@@ -321,12 +321,12 @@ M.telescope = {
     ["<leader>p"] = { "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", "Find all", opts },
     ["<C-A-f>"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep", opts },
     ["<A-p>"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles", opts },
-    ["<C-f>"] = { ":lua Live_grep_current_buffers()<CR>", "Highlight selected word in Normal Mode", opts },
-
+    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch()CR>", "Highlight selected word in Normal Mode", opts },
+    ["<C-h>"] = { ":SearchBoxIncSearch<CR>", opts }
   },
   v = {
-    ["<C-f>"] = { "<cmd>lua Highlight_selected_word() <CR>", "Find buffers", opts },
-
+    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch({visual_mode = true})<CR>", "Find buffers", opts },
+    ["<C-h>"] = { ":SearchBoxIncSearch visual_mode=true<CR>", opts },
   },
 }
 
