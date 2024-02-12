@@ -321,7 +321,7 @@ M.telescope = {
     ["<leader>p"] = { "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", "Find all", opts },
     ["<C-A-f>"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep", opts },
     ["<A-p>"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles", opts },
-    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch()CR>", "Highlight selected word in Normal Mode", opts },
+    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch()<CR>", "Highlight selected word in Normal Mode", opts },
     ["<C-h>"] = { ":SearchBoxIncSearch<CR>", opts }
   },
   v = {
