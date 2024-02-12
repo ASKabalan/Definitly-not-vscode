@@ -89,6 +89,9 @@ local plugins = {
         end
     },
     {
+        'MunifTanjim/nui.nvim',
+    },
+    {
       'VonHeikemen/searchbox.nvim',
       requires = {
       {'MunifTanjim/nui.nvim'}
