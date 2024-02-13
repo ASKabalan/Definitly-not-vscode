@@ -183,6 +183,15 @@ M.general = {
     ["<C-x>"] = { "<C-O>\"+x", "Cut in insert mode", opts },
     ["<C-v>"] = { "<C-R>+", "Paste in insert mode", opts },
     ["<A-a>"] = { "<Esc>V", "Select current line in Normal mode", opts },
+    -- Insert mode mappings for Copilot interactions
+    ["<M-Up>"] = { "<Plug>(copilot-suggest)", "Suggest completion", opts },
+    ["<M-Up>"] = { "<Plug>(copilot-suggest)", "Suggest completion", opts },
+    ["<M-Right>"] = { "<Plug>(copilot-accept-word)", "Accept word suggestion", opts },
+    ["<M-Down>"] = { "<Plug>(copilot-accept-line)", "Accept line suggestion", opts },
+    ["<M-Left>"] = { "<Plug>(copilot-dismiss)", "Dismiss suggestion", opts },
+    ["<M-3>"] = { "<Plug>(copilot-next)", "Next suggestion", opts },
+    ["<M-1>"] = { "<Plug>(copilot-previous)", "Previous suggestion", opts },
+
   },
 
   v = {

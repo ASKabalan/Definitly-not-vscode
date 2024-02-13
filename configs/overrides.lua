@@ -10,6 +10,7 @@ M.treesitter = {
     "cuda",
     "markdown",
     "markdown_inline",
+    "vimdoc",
   },
   indent = {
     enable = true,
