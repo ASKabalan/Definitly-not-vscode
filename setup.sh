@@ -69,11 +69,12 @@ then
   wget $NVIM_DOWNLOAD_URL -P /tmp/nvim-code-download
   rm -rf ~/.local/tools/nvim
   mkdir -p ~/.local/tools/nvim
+  echo "Extracting Neovim..."
   tar -xzf /tmp/nvim-code-download/nvim-linux64.tar.gz --strip-components=1 -C ~/.local/tools/nvim
   rm /tmp/nvim-code-download/nvim-linux64.tar.gz
   echo "# <<< Init nvim >>>" >> ~/.bashrc
-  echo "export PATH=\$HOME/.local/tools/nvim/bin/:\$PATH" >> ~/.bashrc
-  export PATH=$HOME/.local/tools/nvim/bin/:$PATH
+  echo "export PATH=\$HOME/.local/tools/nvim/bin:\$PATH" >> ~/.bashrc
+  export PATH=$HOME/.local/tools/nvim/bin:$PATH
   echo "Neovim is installed at path ~/.local/tools/nvim/bin/."
 else
   echo "Neovim is already installed."
@@ -91,11 +92,12 @@ then
   wget $NODE_DOWNLOAD_URL -P /tmp/nvim-code-download
   rm -rf ~/.local/tools/node
   mkdir -p ~/.local/tools/node
+  echo "Extracting Node.js..."
   tar -xJf /tmp/nvim-code-download/node*.tar.xz --strip-components=1 -C ~/.local/tools/node
   rm /tmp/nvim-code-download/node*.tar.xz
   echo "# <<< Init node >>>" >> ~/.bashrc
-  echo "export PATH=\$HOME/.local/tools/node/bin/:\$PATH" >> ~/.bashrc
-  export PATH=$HOME/.local/tools/node/bin/:$PATH
+  echo "export PATH=\$HOME/.local/tools/node/bin:\$PATH" >> ~/.bashrc
+  export PATH=$HOME/.local/tools/node/bin:$PATH
   echo "Node is installed at path ~/.local/tools/node/bin/."
 else
   echo "Node is already installed."
@@ -108,16 +110,17 @@ echo "Installing ripgrep..."
 echo "==================================="
 if ! command -v rg &> /dev/null
 then
-  RIPGREP_DOWNLOAD_URL="https://github.com/BurntSushi/ripgrep/releases/download/$RIPGREP_VERSION/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz"
+  RIPGREP_DOWNLOAD_URL="https://github.com/BurntSushi/ripgrep/releases/download/$RIPGREP_VERSION/ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
   echo "Downloading ripgrep from $RIPGREP_DOWNLOAD_URL..."
   wget $RIPGREP_DOWNLOAD_URL -P /tmp/nvim-code-download
   rm -rf ~/.local/tools/ripgrep
   mkdir -p ~/.local/tools/ripgrep
+  echo "Extracting ripgrep..."
   tar -xzf /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz --strip-components=1 -C ~/.local/tools/ripgrep
   rm /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz
   echo "# <<< Init ripgrep >>>" >> ~/.bashrc
-  echo "export PATH=\$HOME/.local/tools/ripgrep/:\$PATH" >> ~/.bashrc
-  export PATH=$HOME/.local/tools/ripgrep/:$PATH
+  echo "export PATH=\$HOME/.local/tools/ripgrep:\$PATH" >> ~/.bashrc
+  export PATH=$HOME/.local/tools/ripgrep:$PATH
   echo "Ripgrep is installed at path ~/.local/tools/ripgrep/."
 else
   echo "Ripgrep is already installed."

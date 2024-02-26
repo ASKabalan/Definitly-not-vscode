@@ -71,7 +71,7 @@ export PATH=$HOME/.local/tools/nvim/bin:$PATH
 # <<< Init node >>>
 export PATH=$HOME/.local/tools/node/bin:$PATH
 # <<< Init ripgrep >>>
-export PATH=$HOME/.local/tools/ripgrep/bin:$PATH
+export PATH=$HOME/.local/tools/ripgrep:$PATH
 ```
 
 # Using LSP servers, autocomplete and syntax highlighting
