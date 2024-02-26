@@ -95,7 +95,55 @@ local plugins = {
       'VonHeikemen/searchbox.nvim',
       requires = {
       {'MunifTanjim/nui.nvim'}
-      }
+      },
+      config = function()
+        require('searchbox').setup({
+            defaults = {
+              reverse = false,
+              exact = false,
+              prompt = ' ',
+              modifier = 'disabled',
+              confirm = 'off',
+              clear_matches = true,
+              show_matches = false,
+            },
+            popup = {
+              relative = 'win',
+              position = {
+                row = '5%',
+                col = '95%',
+              },
+              size = 30,
+              border = {
+                style = 'rounded',
+                text = {
+                  top = ' Search ',
+                  top_align = 'left',
+                },
+              },
+              win_options = {
+                winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+              },
+            },
+            hooks = {
+              before_mount = function(input)
+                -- code
+              end,
+              after_mount = function(input)
+                local opts = {buffer = input.bufnr}
+              
+                -- Go to the next match
+                vim.keymap.set('i', '<C-Right>', '<Plug>(searchbox-next-match)', opts)
+                -- Go to the previous match
+                vim.keymap.set('i', '<C-Left>', '<Plug>(searchbox-prev-match)', opts)
+
+              end,
+              on_done = function(value, search_type)
+                -- code
+              end
+            }
+          })
+      end
     },
     {
         "mg979/vim-visual-multi",

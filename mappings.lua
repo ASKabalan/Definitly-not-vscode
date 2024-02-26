@@ -206,7 +206,7 @@ M.general = {
     -- Visual mode mappings for clipboard management
     ["<C-c>"] = { '"+y', "Copy to clipboard", opts },
     ["<C-x>"] = { '"+x', "Cut to clipboard", opts },
-    ["<C-v>"] = { '""xh"+p', "Paste from clipboard and replace selection", opts },
+    ["<C-v>"] = { '"axh"+p', "Paste from clipboard and replace selection", opts },
     ["<C-Z>"] = { "<C-O>u", "Undo", opts },
     ["<C-Y>"] = { "<C-O>:redo<CR>", "Redo", opts },
     ["<A-a>"] = { "V", "Select current line in Normal mode", opts },
@@ -330,11 +330,11 @@ M.telescope = {
     ["<leader>p"] = { "<cmd>lua require('telescope').extensions.projects.projects{}<CR>", "Find all", opts },
     ["<C-A-f>"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Live grep", opts },
     ["<A-p>"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles", opts },
-    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch()<CR>", "Highlight selected word in Normal Mode", opts },
+    ["<C-f>"] = { "<cmd>lua require('searchbox').match_all({title='Search', clear_matches=false})<CR>", "Highlight selected word in Normal Mode", opts },
     ["<C-h>"] = { ":SearchBoxIncSearch<CR>", opts }
   },
   v = {
-    ["<C-f>"] = { "<cmd>lua require('searchbox').incsearch({visual_mode = true})<CR>", "Find buffers", opts },
+    ["<C-f>"] = { "<cmd>lua require('searchbox').match_all({title='Search', clear_matches=false , visual_mode = true})<CR>", "Highlight selected word in Normal Mode", opts },
     ["<C-h>"] = { ":SearchBoxIncSearch visual_mode=true<CR>", opts },
   },
 }
