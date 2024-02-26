@@ -107,12 +107,6 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
-    -- Normal mode mappings for window management
-    ["<C-W><Left>"] = { "<cmd>vertical resize -10<CR>", "Shrink window horizontally", opts },
-    ["<C-W><Right>"] = { "<cmd>vertical resize +10<CR>", "Expand window horizontally", opts },
-    ["<C-W><Up>"] = { "<cmd>resize +10<CR>", "Expand window vertically", opts },
-    ["<C-W><Down>"] = { "<cmd>resize -10<CR>", "Shrink window vertically", opts },
-
     -- Normal mode mappings for text manipulation
     ["<A-Up>"] = { ":m .-2<CR>==", "Move line up", opts },
     ["<A-Down>"] = { ":m .+1<CR>==", "Move line down", opts },
