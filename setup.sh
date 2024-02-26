@@ -116,9 +116,9 @@ then
   tar -xzf /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz --strip-components=1 -C ~/.local/tools/ripgrep
   rm /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz
   echo "# <<< Init ripgrep >>>" >> ~/.bashrc
-  echo "export PATH=\$HOME/.local/tools/ripgrep/bin/:\$PATH" >> ~/.bashrc
-  export PATH=$HOME/.local/tools/ripgrep/bin/:$PATH
-  echo "Ripgrep is installed at path ~/.local/tools/ripgrep/bin/."
+  echo "export PATH=\$HOME/.local/tools/ripgrep/:\$PATH" >> ~/.bashrc
+  export PATH=$HOME/.local/tools/ripgrep/:$PATH
+  echo "Ripgrep is installed at path ~/.local/tools/ripgrep/."
 else
   echo "Ripgrep is already installed."
   echo "it's path is $(which rg)."

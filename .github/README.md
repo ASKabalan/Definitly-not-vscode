@@ -2,7 +2,7 @@
 # Full IDE Noevim
 
 This is my neovim setup that I use mainly to write C++/cuda and python software.
-It includes a vscode-like search textbox, a complete set of syntax highlighting, auto-complete and linters for c++/cuda and python using clang and Python Language Server
+It includes a vscode-like search textbox, a complete set of syntax highlighting, auto-complete and linters for c++/cuda and python using clang and Python Language Server, git integration, symbole windows etc ...
 It also includes github-copilot, and the DAP extension that allows debugging python and c++ code.
 
 To see a -almost- full list of [my mappings](mappings.md) 
