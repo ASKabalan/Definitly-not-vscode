@@ -116,8 +116,8 @@ then
   rm -rf ~/.local/tools/ripgrep
   mkdir -p ~/.local/tools/ripgrep
   echo "Extracting ripgrep..."
-  tar -xzf /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz --strip-components=1 -C ~/.local/tools/ripgrep
-  rm /tmp/nvim-code-download/ripgrep-$RIPGREP_VERSION-aarch64-unknown-linux-gnu.tar.gz
+  tar -xzf /tmp/nvim-code-download/ripgrep-*.tar.gz --strip-components=1 -C ~/.local/tools/ripgrep
+  rm /tmp/nvim-code-download/ripgrep-*.tar.gz
   echo "# <<< Init ripgrep >>>" >> ~/.bashrc
   echo "export PATH=\$HOME/.local/tools/ripgrep:\$PATH" >> ~/.bashrc
   export PATH=$HOME/.local/tools/ripgrep:$PATH
