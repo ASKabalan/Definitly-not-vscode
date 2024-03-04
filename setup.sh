@@ -7,16 +7,16 @@ DEFAULT_RIPGREP_VERSION="14.1.0"
 
 # Default backup flag
 DEFAULT_BACKUP=false
-
+FORCE_REDOWNLOAD=false
 # Set defaults
 NEOVIM_VERSION=$DEFAULT_NEOVIM_VERSION
 NODE_VERSION=$DEFAULT_NODE_VERSION
 RIPGREP_VERSION=$DEFAULT_RIPGREP_VERSION
 BACKUP_FLAG=$DEFAULT_BACKUP
 
-while getopts ":n:v:r:b" opt; do
+while getopts ":n:v:r:b:f" opt; do
   case $opt in
-    n)
+    n)  
       NEOVIM_VERSION=$OPTARG
       ;;
     v)
@@ -27,6 +27,9 @@ while getopts ":n:v:r:b" opt; do
       ;;
     b)
       BACKUP_FLAG=true
+      ;;
+    f)
+      FORCE_REDOWNLOAD=true
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -52,7 +55,7 @@ backup() {
     mv ~/.config/nvim ~/.config/nvim.old
   else
     echo "Deleting existing Neovim setup..."
-    rm -rf ~/.local/nvim/share
+    rm -rf ~/.local/share/nvim
     rm -rf ~/.config/nvim
   fi
 }
@@ -62,7 +65,7 @@ mkdir -p /tmp/nvim-code-download
 echo "==================================="
 echo "Installing Neovim..."
 echo "==================================="
-if ! command -v nvim &> /dev/null
+if ! command -v nvim &> /dev/null || [ "$FORCE_REDOWNLOAD" = true ]
 then
   NVIM_DOWNLOAD_URL="https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz"
   echo "Downloading Neovim from $NVIM_DOWNLOAD_URL..."
@@ -85,7 +88,7 @@ fi
 echo "==================================="
 echo "Installing Node.js..."
 echo "==================================="
-if ! command -v node &> /dev/null
+if ! command -v node &> /dev/null || [ "$FORCE_REDOWNLOAD" = true ]
 then
   NODE_DOWNLOAD_URL="https://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-linux-x64.tar.xz"
   echo "Downloading Node.js from $NODE_DOWNLOAD_URL..."
@@ -108,7 +111,7 @@ fi
 echo "==================================="
 echo "Installing ripgrep..."
 echo "==================================="
-if ! command -v rg &> /dev/null
+if ! command -v rg &> /dev/null || [ "$FORCE_REDOWNLOAD" = true ]
 then
   RIPGREP_DOWNLOAD_URL="https://github.com/BurntSushi/ripgrep/releases/download/$RIPGREP_VERSION/ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
   echo "Downloading ripgrep from $RIPGREP_DOWNLOAD_URL..."
