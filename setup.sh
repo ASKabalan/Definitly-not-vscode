@@ -138,6 +138,6 @@ backup
 echo "==================================="
 echo "Installing NvChad and custom parameters..."
 echo "==================================="
-git clone https://github.com/NvChad/NvChad/tree/v2.0 ~/.config/nvim --depth 1
+git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 git clone https://github.com/ASKabalan/my-nvim-config ~/.config/nvim/lua/custom --depth 1
 nvim
