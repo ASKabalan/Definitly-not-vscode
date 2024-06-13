@@ -1,6 +1,9 @@
 
 # Full IDE Noevim
 
+__note__: Deprecated .. this is my nvchad 2.0v config .. A newer one exists here [nvim-config-2.5]https://github.com/ASKabalan/nvim-config-2.5)
+
+
 This is my neovim setup that I use mainly to write C++/cuda and python software.
 It includes a vscode-like search textbox, a complete set of syntax highlighting, auto-complete and linters for c++/cuda and python using clang and Python Language Server, git integration, symbole windows etc ...
 It also includes github-copilot, and the DAP extension that allows debugging python and c++ code.
